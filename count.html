@@ -1,0 +1,33 @@
+<html> 
+<html>
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var n = prompt("Enter number");
+
+var g_iCount = n;
+
+function startCountdown(){
+       if((g_iCount - 1) >= 0){
+               g_iCount = g_iCount - 1;
+               numberCountdown.innerText = '00:00.0' + g_iCount;
+               setTimeout('startCountdown()',1000);
+       }
+       else
+       {
+        alert("Time expired");
+       }
+}
+
+</script>
+
+</HEAD>
+<BODY onLoad="startCountdown()">
+
+<font face="Digital Readout Upright" color="blue" size="7">
+<div align="center" id="numberCountdown"></div>
+</font>
+
+</body>
+</html>
