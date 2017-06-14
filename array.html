@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>arrays </title>
+
+	<STYLE>
+	  #tbl_details
+	  {
+	  	width: 300px;
+	  	height: 50px;
+	  	border: 2px solid black;
+	  	margin: auto;
+	  	margin-top: 150px;
+	  	background-color: yellow;
+	  }
+	</STYLE>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+	</script>
+	<script>
+	
+			
+				var x= new Array();
+				x[0]= new Array();
+				x[0][0]="1001";
+				x[0][1]="job";
+				x[0][2]="manager";
+			
+				x[1]= new Array();
+				x[1][0]="1002";
+				x[1][1]="jack";
+				x[1][2]="hr";
+	
+				x[2]= new Array();
+				x[2][0]="1003";
+				x[2][1]="james";
+				x[2][2]="programer";
+			$(document).ready(function(){
+				$('#combo').change(function(){
+					var id=$(this).find(':selected').val();
+					var append_string="<tr><td>"+x[id][0]+"</td><td>"+x[id][1]+"</td><td>"+x[id][2]+"</td><td>";
+					$('#tbl_details tr:last').after(append_string);
+			});
+			});	
+	</script>
+</head>
+	<body>
+		<center>
+			<table id="tbl_details" border="1">
+				<tr>
+					<td>ID</td>
+					<td>NAME</td>
+					<td>DESIGNATION</td>
+				</tr>
+			</table>	
+		<select id="combo">
+       		<option>Choose ID</option>
+       	    <option value="0">1001</option>
+       	    <option value="1">1002</option>
+  		    <option value="2">1003</option>       				
+        </select><br><br>
+        	<button>SUBMIT</button>
+        	
+        	</center>
+	</body>
+	</html>
