@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        $("#add2").click(function() {
+          var inp = $("#add").val();
+          $("#add3").append(new Option(inp,0));
+   	});
+ });
+</script>
+<input type="text" id="add">
+<input type="button" value="login" id="add2"><br>
+added item <select id="add3"></select>
+
+</body>
+</html>
