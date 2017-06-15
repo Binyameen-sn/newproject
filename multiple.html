@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+        body
+        {
+            margin-top: 200px;
+        }
+            #li,#aa
+            {
+                display: inline;
+            }
+            #li
+            {margin-right: 50px;
+                
+            }
+            #aa
+            {margin-left: 50px;
+                
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script>
+                $(document).ready(function(){
+                    
+                        $('#available').change(function() {
+                                  var val = $(this).val(),
+                                    text = $(this).find("option:selected").text();
+                                
+                                  $('#added').append(new Option(text, val));
+                            });
+                            $("#btn_remove").click(function () {
+                                 $("#added option:selected").remove();
+                    });          
+            });     
+        </script>
+    </head>
+
+    <body align="center">
+        <div id="li">
+            <label><b>AVAILABLE ITEMS:</b></label>
+                    <select id="available">
+                        <option>AVAILABLE</option>
+                        <option value="0">CAR</option>
+                        <option value="1">SCOOTER</option>
+                        <option value="2">BUS</option>
+                        <option value="3">JEEP</option>
+                        <option value="4">AIROPLANE</option>
+                    </select>
+        </div>
+
+        <div id='aa'>       
+            <label><b>SELECTED ITEMS:</b></label>
+                    <select id="added">
+                    </select><br><br>
+        </div>
+
+        <div id="line">
+            <button id="btn_select">SELECT</button>     
+            <button id="btn_remove">REMOVE</button> 
+       </div>
+    </body>
+</html>
