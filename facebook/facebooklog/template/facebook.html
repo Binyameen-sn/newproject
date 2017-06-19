@@ -1,0 +1,318 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style type="text/css">
+		header
+		{
+			background-color: #4444b1;
+			color: #fff;
+		}
+		#search
+		{
+			position: absolute;
+			left:385px;
+			top: 7px;
+		}
+		#edit
+		{
+			position: absolute;
+			top: 55px;
+			right: 190px;
+		}
+		#lab
+		{
+			position: absolute;
+			top: 50px;
+			left:55px;
+		}
+		#aa
+		{
+			position: absolute;
+			right: 55px;
+		}
+		#aaa
+		{
+			position: absolute;
+			top: 20px;
+		}
+		#login{
+			position: absolute;
+			top: 20px;
+		}
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+		$(document).ready(function()
+		{
+		$('#login').click(function()
+			{
+			var name=$("#email").val();
+			var paswd=$("#password").val();
+			if(name==""&&paswd=="")
+			{
+			$("#demo").text("please enter email");
+			$("#demo1").text("plese enter password");
+				return false;
+			}
+			else
+			{
+				$("#demo").text("");
+				$("#demo1").text("");
+			}
+			
+			if(name=="")
+			{
+				
+				$("#demo").text("please enter email");
+				
+				return false;
+			}
+			else
+			{
+				$("#demo").text("");
+						
+			}
+			if (paswd=="")
+			{
+				
+				$("#demo1").text("plese enter password");
+				return false;
+			}
+			else
+			{
+				$("#demo1").text("");
+						
+			}
+			if(name!=""&&paswd!="")
+			{
+			$.ajax(
+			{
+				'url':'http://services.trainees.baabtra.com/LoginService/login.php',
+				'DataType':'jsonp',
+				'data':{email:name,password:paswd},
+				success:function(data)
+				{
+					
+					var json = $.parseJSON(data);
+					console.log(json[0].Msg);
+					if(json[0].ResponseCode=="200")
+					{
+						window.location.href="facebook2.html?email="+json[0].vchr_first_name+"&&name="+json[0].vchr_first_name;
+					}
+					else if(json[0].ResponseCode=="500")
+					{
+						window.location.href="template/fberror.html?email="+json[0].vchr_user_name+"&&name="+json[0].vchr_first_name;
+					}
+					else
+					{
+						window.location.href="fberror2.html";
+					}
+					console.log(json[0].ResponseCode)
+					$("#contact").html(data);
+				},
+				error:function(error)
+				{
+					console.log(error);
+					alert(error);
+				}
+			});
+		}
+			
+			});
+			
+		$('#signup').click(function(){
+			var name3=$("#name1").val();
+			var name1=$("#name2").val();
+			var email2=$("#email1").val();
+			var pass1=$("#pass").val();
+			var day1=$("#date").val();
+			var month1=$("#month").val();
+			var year1=$("#year").val();
+		if (name3=="")
+		{
+			$("#demo3").text("please enter your first name");
+			return false;
+		}
+		else
+		{
+			$("#demo3").text("")
+		}
+		if (name1=="")
+		{
+			$("#demo4").text("please enter last name")
+			return false;
+		}
+		else
+		{
+			$("#demo4").text("")
+			
+		}
+		if (email2=="")
+		{
+			$("#demo5").text("please enter your email")
+			return false;
+		}
+		else
+		{
+			$("#demo5").text("")
+		}
+		if(pass1=="")
+		{
+			$("#demo6").text("please eneter your password")
+			return false;
+		}
+		else
+		{
+			$("#demo6").text("")
+		}
+		if(day1==""||month1==""||year1=="")
+		{
+			alert("enter your dob currectly")
+		}
+		});
+		});
+		</script>
+		<title>link</title>
+	</head>
+	<body>
+		<header>
+			<div class="container hidden-sm">
+				<div class="row">
+					<div class="col-md-6">
+						<h1>facebook</h1>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<form id="form1">
+								<div class="col-md-4">
+									<label for="">Email or phone</label>
+									<input type="text" id="email"  style="color:#000"><br>
+									<p id="demo"></p>
+								</div>
+								<div class="col-md-4">
+									<label for="">password</label>
+									<input type="password" id="password" style="color:#000"><br>
+									<p id="demo1"></p>
+								</div>
+								<div class="col-md-4">
+									<input type="button" class="btn btn-info btn-login" value="login" id="login">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="reg hidden-sm">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Facebook helps you connect and share with </h3>
+						<h3>the people in your life.</h3>
+						<br><br>
+						<img src="https://www.facebook.com/rsrc.php/v3/yx/r/pyNVUg5EM0j.png">
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>create an account</h1>
+								<h3>it's free always will be</h3>
+							</div>
+							<form>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-6">
+											<input type="text" placeholder="first name" class="form-control" name="name1" id="name1">
+											<p id="demo3"></p>
+										</div>
+										<div class="col-md-6">
+											<input type="text" placeholder="last name" class="form-control" name="name2" id="name2"><p id="demo4"></p>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-12">
+											<input type="text" placeholder="email or phone number" class="form-control" name="email1" id="email1">
+											<p id="demo5"></p>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-12">
+											<input type="password" placeholder="new password" class="form-control" name="pass" id="pass">
+											<p id="demo6"></p>
+										</div>
+									</div>
+								</div>
+								<h3>Birth day</h3>
+								<select size="1" name="date" id="date">
+									<option value="" selected>Day</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+								</select>
+								<select size="1" name="month" id="month">
+									<option value="" selected>Month</option>
+									<option value="jan" >jan</option>
+									<option value="feb" >feb</option>
+									<option value="mar" >mar</option>
+								</select>
+								<select size="1" name="year" id="year">
+									<option value="" selected>Year</option>
+									<option value="1999" >1999</option>
+									<option value="1998" >1998</option>
+									<option value="1997" >1997</option>
+								</select>
+								<a href="">Why do I need to provide my</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">date of birth</a>
+								<br><br>
+								
+								<input type="radio"  name="gen" id="gen" value="male">male
+								<input type="radio"  name="gen" id="gen" value="fe">female
+								
+							</form>
+							<h6>By clicking Sign Up, you agree to our <a>Terms </a>and that you have <br>read our <a>Data Policy</a>, including our <a>Cookie help</a>. You may receive <br>SMS raw from Facebook and can opt out at any time.</h6>
+							<input type="button" value="signup" id="signup" class="btn btn-success">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mobile-header hidden-lg hidden-md">
+		<header class="text-center">
+			<h1>facebook</h1>
+		</header>
+		<div class="login">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" placeholder="email or password" class="form-control">
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" placeholder="password" class="form-control">
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="submit" class="btn btn-block btn-login" value="log in">
+							</div>
+						</div>
+						<hr>
+						<div class="col-xs-12 text-center">
+							<div class="form-group">
+								<input type="button" value="create an account" class="btn btn-success">
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+header
+{
+	background-color: #3b5998;
+	color: #fff;
+	height: 80px;
+}
+#a1
+{
+	position: absolute;
+	left: 250px;
+	top: 20;
+}
+#a2
+{
+	position: absolute;
+	width: 70px;
+	height: 25px;
+	left: 450px;
+	top: 42px;
+}
+#a3
+{
+	background-color: #f7f7f7;
+	height: 90px;
+}
+#a5,#a7
+{
+	background-color: #f7f7f7;
+	height: 300px;
+}
+body
+{
+	background-color: #f7f7f7;
+}
+#a6
+{
+	background-color: white;
+	height: 350px;
+
+}
+#a9
+{
+	height: 20px;
+}
+#a10
+{
+	position: absolute;
+	left: 125px;
+	top:80px ;
+}
+button
+{
+	background-color: #3b5998;
+	color: #fff;
+}

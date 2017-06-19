@@ -1,0 +1,33 @@
+header
+{
+	background-color: #4444b1;
+	color: #fff;
+}
+#search
+{
+	position: absolute;
+	left:385px;
+	top: 7px;
+}
+#edit
+{
+	position: absolute;
+	top: 55px;
+	right: 190px;
+}
+#lab
+{
+	position: absolute;
+	top: 50px;
+	left:55px;
+}
+#aa
+{
+	position: absolute;
+	right: 55px;
+}
+#aaa
+{
+	position: absolute;
+	top: 20px;
+}
